@@ -1,6 +1,6 @@
 #include "main.h"
 
-#define REVISION "1.0.0"
+#define REVISION "1.0.1"
 #define CR 13
 #define LF 10
 
@@ -369,19 +369,13 @@ int main()
     for (char i=4;i;i--)
     {
         green_LED       = 1;     // This LED is optional RM3100RTI shield board specific
-        NucleoRedLED    = 1; // This LED is Nucleo board specific used here only to denote program upload success
         wait(0.1);
         green_LED       = 0;
-        NucleoRedLED    = 0;
         wait(.1);
     }
     green_LED       = 1;
-    NucleoRedLED    = 1;
     wait(.25);
    
-    // This LED is Nucleo board specific
-    NucleoRedLED  = 1; // used here only to denote program upload success
-
     while (1) 
     {
 

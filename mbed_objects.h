@@ -13,7 +13,6 @@
     
 // These LEDs and PBSwitch are Not part of the RM3100RTI Arduino Shield.    
     extern DigitalOut green_LED;
-    extern DigitalOut NucleoRedLED;   // used only to verify mbed program upload success
     extern DigitalIn pushButton;
 
     u32 em7186_i2c_write(u8 registerAddress, u8* buffer, u16 length);

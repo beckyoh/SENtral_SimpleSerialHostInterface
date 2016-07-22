@@ -15,7 +15,6 @@ InterruptIn SENtral_InterruptPin(D2);
 
 // These LEDs and PBSwitch are Not part of the RM3100RTI Arduino Shield.    
 DigitalOut green_LED(D4);
-DigitalOut NucleoRedLED(LED3);   // used only to verify mbed program upload success
 
 DigitalIn pushButton(D5);
 
