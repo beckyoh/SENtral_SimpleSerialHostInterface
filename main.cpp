@@ -33,6 +33,7 @@ u8      reportMetaData = 0;
 u8      fw[] = { "/sd/sentral.fw" };
 u8      logfilename[] = { "/sd/log.csv" };
 //u8      warmStartFile[] = { "/sd/warmstart.dat" }; 
+u8 sentral_service_flag=0;
 
 FILE *flog;
 
@@ -45,9 +46,9 @@ char    serial_inchar;
 void SENtral_Interrupt(void)
 {
 
-    bytesRead = em7186_read_fifo(fifoBuffer);
-    em7186_parse_fifo(fifoBuffer, bytesRead);
-    
+    sentral_service_flag=1;
+    SENtral_InterruptPin.disable_irq();
+        
 }
 
 void OnSerial(void)
@@ -383,6 +384,15 @@ int main()
         {
             processSerialInchar(serial_inchar); // process user key commands
             serial_inchar = NULL;
+        }
+        
+        if (sentral_service_flag)
+        {
+            sentral_service_flag=0;
+            bytesRead = em7186_read_fifo(fifoBuffer);
+            em7186_parse_fifo(fifoBuffer, bytesRead);
+            SENtral_InterruptPin.enable_irq();
+    
         }
 
         if (pushButton == 1) // PBSwitch is wired as active high

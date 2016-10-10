@@ -1451,17 +1451,18 @@ void displaySensorConfiguration()
 void displaySensorInformation()
 {
     if (!haveSensorInfo) { getSensorInformation(); };
-    printf("+------------------------------------------------------------------------------------+\n\r");
-    printf("|                                 Sensor Information                                 |\n\r");
-    printf("+----------------------------------+---------+-------+-------+-----+----------+------+\n\r");
-    printf("| Sensor                           | Driver  | Power | Range | Res | Rate     | Size |\n\r");
-    printf("+----------------------------------+---------+-------+-------+-----+----------+------+\n\r");
+    printf("+------------------------------------------------------------------------------------------+\n\r");
+    printf("|                                  Sensor Information                                      |\n\r");
+    printf("+----------------------------------------+---------+-------+-------+-----+----------+------+\n\r");
+    printf("| ID  |Sensor                            | Driver  | Power | Range | Res | Rate     | Size |\n\r");
+    printf("+-----|----------------------------------+---------+-------+-------+-----+----------+------+\n\r");
     u8 i;
     for (i = 0; i < sizeof(sensorInfoParamList) / sizeof(sensorInfoParamList[0]); i++)
     {
         if (sensorInformation[i].sensorId > 0)
         {
-            printf("| %-32s | % 3u.%-3u |  % 4u | % 5u | % 3u | %-3u-% 4u |  % 3u |\n\r",
+            printf("|%3u  | %-32s | % 3u.%-3u |  % 4u | % 5u | % 3u | %-3u-% 4u |  % 3u |\n\r",
+                i,
                 em7186_sensor_name[sensorInformation[i].sensorId], sensorInformation[i].driverId, 
                 sensorInformation[i].driverVersion, sensorInformation[i].power,
                 sensorInformation[i].maxRange, sensorInformation[i].resolution, 
@@ -1469,7 +1470,7 @@ void displaySensorInformation()
                 sensorInformation[i].eventSize);
         }
     }
-    printf("+----------------------------------+---------+-------+-------+-----+----------+------+\n\r");
+    printf("+-----|----------------------------------+---------+-------+-------+-----+----------+------+\n\r");
 }
 
 
