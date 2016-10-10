@@ -1,6 +1,6 @@
 #include "main.h"
 
-#define REVISION "1.0.1"
+#define REVISION "1.0.2"
 #define CR 13
 #define LF 10
 
