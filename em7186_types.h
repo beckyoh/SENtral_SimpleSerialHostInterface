@@ -543,7 +543,7 @@ const static char *em7186_sensor_name[128] =
     "step detector",                            // 18
     "step counter",                             // 19
     "geomagnetic rotation vector",              // 20
-    "Heart rate",                               // 21
+    "Heart rate -OR- Car Detector",             // 21
     "tilt detector",                            // 22
     "wake gesture",                             // 23
     "glance gesture",                           // 24

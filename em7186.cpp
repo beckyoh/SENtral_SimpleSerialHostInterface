@@ -1042,7 +1042,7 @@ u8  em7186_set_scale_factors()
 
     // Can change during system operation (if desired)
     float accelDynamicRange = 4.0f; // g
-    float magDynamicRange = 2000.0f; // uT
+    float magDynamicRange = 1000.0f; // uT 
     float gyroDynamicRange = 2000.0f; // d/s
 
     // Change depending on dynamic range
