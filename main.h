@@ -9,7 +9,7 @@
 #include <math.h>
 #include "mbed_objects.h"
 #include "em7186.h"
-#include "SDFileSystem.h"
+
 
 
 extern u8   serialCommandMode;

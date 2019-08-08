@@ -913,6 +913,7 @@ u32 em7186_parse_next_fifo_block(u8* buffer, u32 size)
         }
         case SENSOR_TYPE_RAW_ACCEL:
         case SENSOR_TYPE_RAW_GYRO:
+        {
             SensorData3Axis sensorData;
             float* fPacket = (float*)&buffer[7];
             sensorData.x = 256 * (s8)buffer[2] + buffer[1]; //s16 will convert to float here
@@ -922,6 +923,7 @@ u32 em7186_parse_next_fifo_block(u8* buffer, u32 size)
             if (printData) printf("%u %s: %3.0f, %3.0f, %3.0f, %3.1f\n\r", timestamp, em7186_sensor_name[sensorId], sensorData.x, sensorData.y, sensorData.z, sensorData.extra);
             if (logData) fprintf(flog,"%u,%u,%f,%f,%f,%f\n", timestamp,sensorId, sensorData.x, sensorData.y, sensorData.z, sensorData.extra);
             return 11;
+        }
         case SENSOR_TYPE_RAW_MAG:  //jm modified to s32 for RM3100
         {
             SensorData3Axis sensorData;

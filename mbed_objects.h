@@ -4,9 +4,9 @@
 //   enable globalization of mbed platform specific objects
 //   for all source files to utilize
 #include "main.h"
-#include "SDFileSystem.h"
+#include "SDBlockDevice.h"
    
-    extern SDFileSystem sd;
+    extern SDBlockDevice sd;
     extern I2C i2c;
     extern Serial pc;
     extern InterruptIn SENtral_InterruptPin;

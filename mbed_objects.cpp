@@ -8,7 +8,7 @@
 // MBED Library instatiations 
 //******************************
                 //mosi miso sck cs
-SDFileSystem sd(D11, D12, D13, D10, "sd");
+SDBlockDevice sd(D11, D12, D13, D10);
 I2C i2c(I2C_SDA, I2C_SCL);
 Serial pc(SERIAL_TX, SERIAL_RX);
 InterruptIn SENtral_InterruptPin(D2);
